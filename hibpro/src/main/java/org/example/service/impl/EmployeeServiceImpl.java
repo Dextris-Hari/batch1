@@ -5,6 +5,7 @@ import org.example.dao.impl.EmployeeDAOImpl;
 import org.example.entity.Employee;
 import org.example.service.EmployeeService;
 
+import java.util.List;
 import java.util.Optional;
 
 public class EmployeeServiceImpl implements EmployeeService {
@@ -72,5 +73,56 @@ public class EmployeeServiceImpl implements EmployeeService {
             return Optional.empty();
         }
 
+    }
+
+    @Override
+    public Optional<Employee> validateAndFindByName(String name) {
+        Optional<Employee> employee = employeeDAO.findByName(name);
+        if (employee.isPresent()) {
+            Employee employee1 = employee.get();
+
+            return Optional.of(employee1);
+
+        } else {
+
+
+            return Optional.empty();
+        }
+
+
+    }
+
+    @Override
+    public List<Employee> validateFindAll() {
+        List<Employee> employees = employeeDAO.findAll();
+        if (employees.size() != 0) {
+
+
+            return employees;
+        }
+        return EmployeeService.super.validateFindAll();
+    }
+
+    @Override
+    public Optional<Employee> validateUpdateByName(String name, String mobile, String dob) {
+
+        Optional<Employee> employee = employeeDAO.updateByName(name, mobile, dob);
+        if (employee.isPresent()) {
+
+            Employee employee1 = employee.get();
+            return Optional.of(employee1);
+        }
+        return EmployeeService.super.validateUpdateByName(name, mobile, dob);
+    }
+
+    @Override
+    public Optional<String> validateDeleteByName(String name) {
+        Optional<String> message = employeeDAO.deleteByName(name);
+        if (message.isPresent()) {
+
+            String message2 = message.get();
+            return Optional.of(message2);
+        }
+        return Optional.empty();
     }
 }

@@ -5,6 +5,8 @@ import org.example.entity.Employee;
 import org.example.utils.HibernateUtils;
 import org.hibernate.*;
 
+import javax.persistence.OneToMany;
+import java.util.List;
 import java.util.Optional;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
@@ -109,10 +111,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public Optional<Employee> finfByName(String name) {
+    public Optional<Employee> findByName(String name) {
         Session session = sessionFactory.openSession();
         try {
-            Query query = session.createNamedQuery("finfByName");
+            Query query = session.createNamedQuery("findByName");
             query.setParameter("name", name);
             Object obj = query.getSingleResult();
             if (obj != null) {
@@ -121,6 +123,75 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             } else {
                 return Optional.empty();
             }
+
+
+        } catch (HibernateException hibernateException) {
+            hibernateException.printStackTrace();
+            return Optional.empty();
+        } finally {
+            session.close();
+        }
+
+    }
+
+    @Override
+    public List<Employee> findAll() {
+        Session session = sessionFactory.openSession();
+        try {
+            Query query = session.createNamedQuery("findAll");
+            List<Employee> employees = query.getResultList();
+            if (employees.size() != 0) {
+
+                return employees;
+            } else {
+                return null;
+            }
+        } catch (HibernateException hibernateException) {
+            hibernateException.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return null;
+    }
+
+    @Override
+    public Optional<Employee> updateByName(String name, String mobile, String dob) {
+        Session session = sessionFactory.openSession();
+        try {
+            Transaction transaction = session.beginTransaction();
+            Query query = session.createNamedQuery("updateByName");
+            query.setParameter("name", name);
+            query.setParameter("mobile", mobile);
+            query.setParameter("dob", dob);
+            Integer integer = query.executeUpdate();
+            System.out.println(integer);
+            Query query1 = session.createNamedQuery("findByName");
+            query1.setParameter("name", name);
+            Object obj = query1.getSingleResult();
+            Employee employee = (Employee) obj;
+            return Optional.of(employee);
+        } catch (HibernateException hibernateException) {
+            hibernateException.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return EmployeeDAO.super.updateByName(name, mobile, dob);
+    }
+
+    @Override
+    public Optional<String> deleteByName(String name) {
+        Session session = sessionFactory.openSession();
+        try {
+            Transaction transaction = session.beginTransaction();
+            Query query = session.createNamedQuery("deleteByName");
+            query.setParameter("name", name);
+            Integer integer = query.executeUpdate();
+            System.out.println(integer);
+            transaction.commit();
+
+            return Optional.of("your data is deleted");
 
 
         } catch (HibernateException hibernateException) {

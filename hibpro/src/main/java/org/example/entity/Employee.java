@@ -11,7 +11,10 @@ import javax.persistence.*;
 @lombok.AllArgsConstructor
 @lombok.NoArgsConstructor
 @lombok.ToString
-@NamedQueries({@NamedQuery(name = "finfByName" ,query = "select info from Employee info where info.e_name=:name")})
+@NamedQueries({@NamedQuery(name = "findByName" ,query = "select info from Employee info where info.name=:name"),
+@NamedQuery(name = "findAll" ,query = "select info from Employee info "),
+@NamedQuery(name = "updateByName",query = "update  Employee info set info.dob=:dob,info.mobile=:mobile where info.name=:name"),
+@NamedQuery(name = "deleteByName" ,query = "delete from Employee info where info.name=:name")})
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

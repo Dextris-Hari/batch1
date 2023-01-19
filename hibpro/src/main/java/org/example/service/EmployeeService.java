@@ -2,6 +2,7 @@ package org.example.service;
 
 import org.example.entity.Employee;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface EmployeeService {
@@ -27,6 +28,22 @@ public interface EmployeeService {
     }
 
     default Optional<Employee> validateAndFindByName(String name) {
+
+
+        return Optional.empty();
+    }
+    default List<Employee> validateFindAll() {
+
+
+        return null;
+    }
+    default Optional<Employee> validateUpdateByName(String name, String mobile, String dob) {
+
+
+        return Optional.empty();
+    }
+    default  Optional<String> validateDeleteByName(String name){
+
 
 
         return Optional.empty();
