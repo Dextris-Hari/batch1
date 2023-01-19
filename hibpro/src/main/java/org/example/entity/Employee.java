@@ -11,6 +11,7 @@ import javax.persistence.*;
 @lombok.AllArgsConstructor
 @lombok.NoArgsConstructor
 @lombok.ToString
+@NamedQueries({@NamedQuery(name = "finfByName" ,query = "select info from Employee info where info.e_name=:name")})
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,6 +1,5 @@
-package org.example.entity.utils;
+package org.example.utils;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -8,7 +7,6 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class HibernateUtils {
-
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;
 
@@ -35,22 +33,5 @@ public class HibernateUtils {
             }
         }
         return sessionFactory;
-    }
-
-    public static Session getSession(){
-
-        return sessionFactory.openSession();
-    }
-
-    public static void shutdown() {
-        if (registry != null) {
-            StandardServiceRegistryBuilder.destroy(registry);
-        }
-    }
-
-
-
-    public static void main(String[] args){
-
     }
 }
