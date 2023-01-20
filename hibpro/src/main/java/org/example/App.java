@@ -25,7 +25,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        logger.info("===================== this is save method calling================================");
+        logger.info("====================== this is save method calling================================");
 
         Employee employee = new Employee();
         employee.setName("jayaram");
