@@ -1,0 +1,86 @@
+Jan 20, 2023 12:37:08 PM org.example.utils.LoggerObject <clinit>
+CONFIG: Configuration Done
+Jan 20, 2023 12:37:08 PM org.example.utils.LoggerObject <clinit>
+FINE: Finer Logged
+Jan 20, 2023 12:37:08 PM org.example.utils.LoggerObject <clinit>
+FINER: Finer Example on Logger Handler Completed
+Jan 20, 2023 12:37:08 PM org.example.App main
+INFO: ===================== this is save method calling================================
+Jan 20, 2023 12:37:10 PM org.example.service.impl.EmployeeServiceImpl validateAndSave
+INFO:  employee name is valid and mobile number is also valid 
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl save
+INFO: save method is compliteted 
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl save
+INFO: sission of save method is closed
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: data of the save method is save true
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: =============================================this is getEmployeeById method calling===============================
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl getEmployeeById
+INFO: sission of getById method is closed
+Jan 20, 2023 12:37:11 PM org.example.service.impl.EmployeeServiceImpl validateAndGetEmployeeById
+WARNING:  employee  is have data 
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: employee on  you entered id is there yu can read it Employee(id=8, name=manoj, dob=03/08/2023, mobile=9482560881)
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: ===========calling update method====================================================
+Jan 20, 2023 12:37:11 PM org.example.service.impl.EmployeeServiceImpl validateAndUpdateNameById
+INFO:   name is valid to update 
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl updateNameById
+INFO: employee is not null
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl updateNameById
+INFO: employee1 is not null
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl updateNameById
+INFO: sission of updateNameById method is closed
+Jan 20, 2023 12:37:11 PM org.example.service.impl.EmployeeServiceImpl validateAndUpdateNameById
+INFO:   employee have data you can update that data 
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: employee is present on your id you can get updated employee Employee(id=8, name=nagabaran, dob=03/08/2023, mobile=9482560881)
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: ==========calling deleteBYId method==============================
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl deleteEmployeeById
+INFO: employee is not null
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl deleteEmployeeById
+INFO: sission of deleteEmployeeById method is closed
+Jan 20, 2023 12:37:11 PM org.example.service.impl.EmployeeServiceImpl validateAndDeleteEmployeeById
+INFO:  employee have data you can delete
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: your employee on the id you entered is deleted  and deleted employee is: Employee(id=10, name=jyothi, dob=08/05/1996, mobile=9482560881)
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: =====================================QUERY============================================
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: =============calling finfByName method=============
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl findByName
+INFO: obj is not null
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl findByName
+INFO: sission of findByName method is closed
+Jan 20, 2023 12:37:11 PM org.example.service.impl.EmployeeServiceImpl validateAndFindByName
+INFO: employee have data  you can see that data
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: employee is present on the name you entered you can read it Employee(id=11, name=jayaram, dob=08/05/1996, mobile=9482560881)
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: ===========calling getAll method============================
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl findAll
+INFO: employees size is not 0
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl findAll
+INFO: sission of findAll method is closed
+Jan 20, 2023 12:37:11 PM org.example.service.impl.EmployeeServiceImpl validateFindAll
+INFO: employee list is not emty you can read it 
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: your data  in the list are:  [Employee(id=11, name=jayaram, dob=08/05/1996, mobile=9482560881), Employee(id=8, name=nagabaran, dob=03/08/2023, mobile=9482560881), Employee(id=9, name=jayanth, dob=08/05/1996, mobile=9482560881)]
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: ===================calling updateByName===============
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl updateByName
+INFO: sission of updateByName method is closed
+Jan 20, 2023 12:37:11 PM org.example.service.impl.EmployeeServiceImpl validateUpdateByName
+WARNING: employee   not emty you can update it 
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO:  your  employee on the name you entered  is updated and updated emplyoee is Employee(id=9, name=jayanth, dob=09/09/1960, mobile=7894561230)
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO: ==========calling deleteByName====================
+Jan 20, 2023 12:37:11 PM org.example.dao.impl.EmployeeDAOImpl deleteByName
+INFO: sission of deleteByName method is closed
+Jan 20, 2023 12:37:11 PM org.example.service.impl.EmployeeServiceImpl validateDeleteByName
+WARNING: employee   not emty you can delete it 
+Jan 20, 2023 12:37:11 PM org.example.App main
+INFO:  your data is deleted

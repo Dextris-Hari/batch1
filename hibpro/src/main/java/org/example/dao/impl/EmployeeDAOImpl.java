@@ -8,8 +8,13 @@ import org.hibernate.*;
 import javax.persistence.OneToMany;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static org.example.utils.LoggerObject.getLOGGER;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
+    Logger logger = getLOGGER();
     SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
 
     @Override
@@ -20,11 +25,14 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             Transaction transaction = session.beginTransaction();
             session.save(employee);
             transaction.commit();
+            logger.info("save method is compliteted ");
             return true;
         } catch (HibernateException hibernateException) {
             hibernateException.printStackTrace();
+            logger.log(Level.SEVERE, "hibernate exception" + hibernateException);
         } finally {
             session.close();
+            logger.info("sission of save method is closed");
             // sessionFactory.close();
         }
 
@@ -44,8 +52,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             }
         } catch (HibernateException e) {
             e.printStackTrace();
+            logger.log(Level.SEVERE, "hibernate exception" + e);
         } finally {
             session.close();
+            logger.info("sission of getById method is closed");
         }
 
 
@@ -59,27 +69,34 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             Transaction transaction = session.beginTransaction();
             Employee employee = session.find(Employee.class, id);
             if (employee != null) {
-
+                logger.info("employee is not null");
                 employee.setName(name);
                 session.save(employee);
                 transaction.commit();
                 Employee employee1 = session.find(Employee.class, id);
                 if (employee1 != null) {
+                    logger.info("employee1 is not null");
+
                     return Optional.of(employee1);
 
                 } else {
+                    logger.warning("employee1 is  null");
+
                     return Optional.empty();
                 }
 
             } else {
-                System.out.println(" entering id not consist data to update ");
+                logger.warning("entering id not consist data to update");
+
                 return Optional.empty();
             }
         } catch (HibernateException hibernateException) {
             hibernateException.printStackTrace();
+            logger.log(Level.SEVERE, "hibernate exception" + hibernateException);
             return Optional.empty();
         } finally {
             session.close();
+            logger.info("sission of updateNameById method is closed");
         }
 
 
@@ -93,19 +110,26 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
             Employee employee = session.find(Employee.class, id);
             if (employee != null) {
+                logger.info("employee is not null");
+
+
                 session.delete(employee);
                 transaction.commit();
                 return Optional.of(employee);
             } else {
-                System.out.println(" you entered id have no data");
+                logger.warning("you entered id have no data");
+
                 return Optional.empty();
             }
 
         } catch (HibernateException hibernateException) {
             hibernateException.printStackTrace();
+            logger.log(Level.SEVERE, "hibernate exception" + hibernateException);
             return Optional.empty();
         } finally {
             session.close();
+            logger.info("sission of deleteEmployeeById method is closed");
+
         }
 
     }
@@ -118,18 +142,25 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             query.setParameter("name", name);
             Object obj = query.getSingleResult();
             if (obj != null) {
+                logger.info("obj is not null");
+
                 Employee employee = (Employee) obj;
                 return Optional.of(employee);
             } else {
+                logger.warning("obj is  null");
+
                 return Optional.empty();
             }
 
 
         } catch (HibernateException hibernateException) {
             hibernateException.printStackTrace();
+            logger.log(Level.SEVERE, "hibernate exception" + hibernateException);
             return Optional.empty();
         } finally {
             session.close();
+            logger.info("sission of findByName method is closed");
+
         }
 
     }
@@ -141,15 +172,22 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             Query query = session.createNamedQuery("findAll");
             List<Employee> employees = query.getResultList();
             if (employees.size() != 0) {
+                logger.info("employees size is not 0");
+
 
                 return employees;
             } else {
+                logger.warning("employees size is  0");
+
                 return null;
             }
         } catch (HibernateException hibernateException) {
             hibernateException.printStackTrace();
+            logger.log(Level.SEVERE, "hibernate exception" + hibernateException);
         } finally {
             session.close();
+            logger.info("sission of findAll method is closed");
+
         }
 
         return null;
@@ -173,8 +211,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             return Optional.of(employee);
         } catch (HibernateException hibernateException) {
             hibernateException.printStackTrace();
+            logger.log(Level.SEVERE, "hibernate exception" + hibernateException);
         } finally {
             session.close();
+            logger.info("sission of updateByName method is closed");
+
         }
 
         return EmployeeDAO.super.updateByName(name, mobile, dob);
@@ -196,9 +237,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
         } catch (HibernateException hibernateException) {
             hibernateException.printStackTrace();
+            logger.log(Level.SEVERE, "hibernate exception" + hibernateException);
             return Optional.empty();
         } finally {
             session.close();
+            logger.info("sission of deleteByName method is closed");
+
         }
 
     }

@@ -12,86 +12,112 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static org.example.utils.LoggerObject.getLOGGER;
 
 /**
  * Hello world!
  */
 public class App {
+    static Logger logger = getLOGGER();
+
     public static void main(String[] args) {
-        System.out.println("===================== this is save method calling================================");
+
+        logger.info("===================== this is save method calling================================");
+
         Employee employee = new Employee();
-        employee.setName("manoj");
-        employee.setMobile("7204250720");
-        employee.setDob("03/08/1998");
+        employee.setName("jayaram");
+        employee.setMobile("9482560881");
+        employee.setDob("08/05/1996");
         EmployeeService employeeService = new EmployeeServiceImpl();
-          Boolean aBoolean = employeeService.validateAndSave(employee);
-           System.out.println(aBoolean);
-        System.out.println(" =============================================this is getEmployeeById method calling================================================");
-        Optional<Employee> employee1 = employeeService.validateAndGetEmployeeById(1);
+        Boolean aBoolean = employeeService.validateAndSave(employee);
+        logger.info("data of the save method is save" + " " + aBoolean);
+        logger.info("=============================================this is getEmployeeById method calling===============================");
+        Optional<Employee> employee1 = employeeService.validateAndGetEmployeeById(8);
         if (employee1.isPresent()) {
             Employee employee2 = employee1.get();
+            logger.info("employee on  you entered id is there yu can read it" + " " + employee2);
+
             System.out.println(employee2);
         } else {
+            logger.warning("in your id data is null");
 
 
-            System.err.println(" in your id data is null");
         }
-        System.out.println("===========calling update method====================================================");
-        Optional<Employee> employee2 = employeeService.validateAndUpdateNameById(1, "nagabaran");
+        logger.info("===========calling update method====================================================");
+
+
+        Optional<Employee> employee2 = employeeService.validateAndUpdateNameById(8, "nagabaran");
         if (employee2.isPresent()) {
+
             Employee employee3 = employee2.get();
             System.out.println(employee3);
+            logger.info("employee is present on your id you can get updated employee" + " " + employee3);
+
         } else {
-            System.err.println(" there is no data to show and update");
+            logger.warning("there is no data to show and update");
+
         }
-        System.out.println("==========calling deleteBYId method==============================");
-        Optional<Employee> employee3 = employeeService.validateAndDeleteEmployeeById(2);
+        logger.info("==========calling deleteBYId method==============================");
+
+        Optional<Employee> employee3 = employeeService.validateAndDeleteEmployeeById(10);
         if (employee3.isPresent()) {
+
             Employee employee4 = employee3.get();
-            System.out.println("your deleted employee is: " + employee4);
+            logger.info("your employee on the id you entered is deleted  and deleted employee is: " + employee4);
+
         } else {
-            System.err.println(" there no data to delete");
+            logger.warning(" there no data to delete");
+
         }
-        System.out.println("=====================================QUERY============================================");
-        System.out.println("=============calling finfByName method=============");
-        Optional<Employee> employee4 = employeeService.validateAndFindByName("jayanth");
+        logger.info("=====================================QUERY============================================");
+        logger.info("=============calling finfByName method=============");
+
+        Optional<Employee> employee4 = employeeService.validateAndFindByName("jayaram");
         if (employee4.isPresent()) {
 
             Employee employee5 = employee4.get();
-            System.out.println(employee5);
+            logger.info("employee is present on the name you entered you can read it" + " " + employee5);
+
 
         } else {
+            logger.warning(" there is no data in your name");
 
-            System.err.println(" there is no data in your name");
         }
-        System.out.println("===========calling getAll method============================");
+        logger.info("===========calling getAll method============================");
+
         List<Employee> employeeList = employeeService.validateFindAll();
         if (employeeList.size() != 0) {
-            System.out.println(employeeList);
+            logger.info("your data  in the list are: " + " " + employeeList);
 
 
         } else {
-            System.err.println(" your list is 0");
-        }
+            logger.warning(" your list is 0");
 
-        System.out.println("===================calling updateByName");
-        Optional<Employee> employee5 = employeeService.validateUpdateByName("manoj", "9482560881", "03/08/2023");
+        }
+        logger.info("===================calling updateByName===============");
+        Optional<Employee> employee5 = employeeService.validateUpdateByName("jayanth", "7894561230", "09/09/1960");
         if (employee5.isPresent()) {
 
             Employee employee6 = employee5.get();
-            System.out.println(employee6);
-        } else {
+            logger.info(" your  employee on the name you entered  is updated and updated emplyoee is" + " " + employee6);
 
-            System.out.println(" there is no data in your name");
+        } else {
+            logger.warning(" there is no data in your name");
+
         }
-        System.out.println("==========calling deleteByName===================");
-      Optional<String> message=  employeeService.validateDeleteByName("jayanth");
-      if(message.isPresent()){
-        String message2=  message.get();
-          System.out.println(message2);
-      }
-      else{
-          System.out.println(" there is no data in this name to delete");
-      }
+        logger.info("==========calling deleteByName====================");
+
+        Optional<String> message = employeeService.validateDeleteByName("manoj");
+        if (message.isPresent()) {
+            String message2 = message.get();
+            logger.info(" " + message2);
+
+        } else {
+            logger.warning(" there is no data in this name to delete");
+
+        }
     }
 }
