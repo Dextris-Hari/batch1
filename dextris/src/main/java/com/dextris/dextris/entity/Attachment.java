@@ -21,11 +21,14 @@ public class Attachment {
     @Lob
     private byte[] data;
 
-    public Attachment(String fileName, String fileType, byte[] data) {
+    private String URL;
+
+    public Attachment(String fileName, String fileType, byte[] data , String URL) {
         System.out.println(" inside para "+this.getClass().getSimpleName());
         this.fileName = fileName;
         this.fileType = fileType;
         this.data = data;
+        this.URL=URL;
     }
 
     public Attachment() {
@@ -62,5 +65,13 @@ public class Attachment {
 
     public void setData(byte[] data) {
         this.data = data;
+    }
+
+    public String getURL() {
+        return URL;
+    }
+
+    public void setURL(String URL) {
+        this.URL = URL;
     }
 }

@@ -21,6 +21,8 @@ import java.util.Set;
 
 @Service
 public class JwtService implements UserDetailsService {
+    private Integer count = 0;
+
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -33,8 +35,10 @@ public class JwtService implements UserDetailsService {
                 this.getClass().getSimpleName());
 
     }
-    public JwtService(UserRepository userRepository, JwtUtil jwtUtil, AuthenticationManager authenticationManager) {
-        System.out.println(" inside the para cos"+this.getClass().getSimpleName());
+
+
+    public JwtService(Integer count, UserRepository userRepository, JwtUtil jwtUtil, AuthenticationManager authenticationManager) {
+        this.count = count;
         this.userRepository = userRepository;
         this.jwtUtil = jwtUtil;
         this.authenticationManager = authenticationManager;
@@ -50,13 +54,24 @@ public class JwtService implements UserDetailsService {
         final UserDetails userDetails = loadUserByUsername(userName);
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
         User user = userRepository.findById(userName).get();
-        return new JwtResponse(user, newGeneratedToken);
+        if (user != null) {
+            this.count = 0;
+            userRepository.updateCountByEmail(count, user.getEmail());
+
+
+            return new JwtResponse(user, newGeneratedToken, user.getStatus());
+
+        }
+        return null;
+
+
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println("inside the loadUserByUserName method cus");
         User user = userRepository.findById(username).get();
+        System.out.println(user.getStatus()+"🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶");
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getNewPassword(), getAuthorities(user));
         } else {
@@ -88,6 +103,26 @@ public class JwtService implements UserDetailsService {
         } catch (DisabledException exception) {
             throw new Exception("user is desabled");
         } catch (BadCredentialsException exception) {
+            System.out.println(count);
+            this.count++;
+            System.out.println(" data is not there this is from service");
+            // return Optional.empty();
+            User user = userRepository.findById(userName).get();
+            if (this.count <= 3) {
+                System.out.println(this.count + "💕💕💕💕💕💕💕💕💕💕");
+                userRepository.updateStatusByEmail(user.getStatus(), user.getEmail());
+                userRepository.updateCountByEmail(count, user.getEmail());
+                System.out.println(count + "         ❤️❤️❤️❤️❤️");
+
+
+            }
+            if (this.count > 3) {
+                user.setStatus("blocked");
+
+                userRepository.updateStatusByEmail(user.getStatus(), user.getEmail());
+                System.out.println(user.getStatus());
+
+            }
 
             throw new Exception("bad credential from user");
         }

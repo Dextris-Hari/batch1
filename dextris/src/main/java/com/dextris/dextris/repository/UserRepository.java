@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 
 @Repository
@@ -28,4 +29,19 @@ public interface UserRepository extends JpaRepository<User,String> {
     @Modifying
     @Query(" update  User info set info.otp=:otp,info.newPassword=:newPassword , info.status=:st, info.conformPassword=:cp where info.email=:mi")
     void resetPasswordByEmail(@Param("mi") String findByMail, @Param("newPassword") String newPassword, @Param("st")String status, @Param("otp")Integer otp, @Param("cp")String conformPassword);
+
+    @Transactional
+    @Modifying
+    @Query("update User info set info.count=:count where info.email=:mi")
+    void updateCountByEmail( @Param("count") Integer count,@Param("mi") String userName);
+    @Transactional
+    @Modifying
+    @Query("update User info set info.status=:status where info.email=:mi")
+
+
+    void updateStatusByEmail(@Param("status")  String status,@Param("mi") String userName);
+
+
+
+
 }

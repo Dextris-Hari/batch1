@@ -58,7 +58,7 @@ public class User {
     private Date dateOfBirth;
 
 
-    private String fileName;
+
 
     private String status;
     private String conformPassword;
@@ -66,6 +66,23 @@ public class User {
     private Integer otp;
     private LocalDate date;
     private LocalTime time;
+
+
+    public User(String userName, String lastName, String email, Long phoneNumber, String newPassword, Set<Role> role, Date dateOfBirth, String status, String conformPassword, Integer count, Integer otp, LocalDate date, LocalTime time) {
+        this.userName = userName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.newPassword = newPassword;
+        this.role = role;
+        this.dateOfBirth = dateOfBirth;
+        this.status = status;
+        this.conformPassword = conformPassword;
+        this.count = count;
+        this.otp = otp;
+        this.date = date;
+        this.time = time;
+    }
 
     public String getUserName() {
         return userName;
@@ -123,7 +140,6 @@ public class User {
         this.dateOfBirth = dateOfBirth;
     }
 
-
     public String getStatus() {
         return status;
     }
@@ -172,14 +188,6 @@ public class User {
         this.time = time;
     }
 
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -190,7 +198,6 @@ public class User {
                 ", newPassword='" + newPassword + '\'' +
                 ", role=" + role +
                 ", dateOfBirth=" + dateOfBirth +
-                ", fileName=" + fileName +
                 ", status='" + status + '\'' +
                 ", conformPassword='" + conformPassword + '\'' +
                 ", count=" + count +
@@ -198,22 +205,5 @@ public class User {
                 ", date=" + date +
                 ", time=" + time +
                 '}';
-    }
-
-    public User(String userName, String lastName, String email, Long phoneNumber, String newPassword, Set<Role> role, Date dateOfBirth, String fileName, String status, String conformPassword, Integer count, Integer otp, LocalDate date, LocalTime time) {
-        this.userName = userName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.newPassword = newPassword;
-        this.role = role;
-        this.dateOfBirth = dateOfBirth;
-        this.fileName = fileName;
-        this.status = status;
-        this.conformPassword = conformPassword;
-        this.count = count;
-        this.otp = otp;
-        this.date = date;
-        this.time = time;
     }
 }

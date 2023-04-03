@@ -10,8 +10,17 @@ public class JwtResponse {
 
     private User user;
     private String jwtToken;
+    private String status;
 
-    public JwtResponse(User user, String jwtToken) {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public JwtResponse(User user, String jwtToken ,String status) {
         System.out.println(" inside the para "+this
                 .getClass().getSimpleName());
         this.user = user;

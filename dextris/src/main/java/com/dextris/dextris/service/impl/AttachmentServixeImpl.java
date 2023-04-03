@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+import java.util.stream.Stream;
+
 @Service
 public class AttachmentServixeImpl implements AttachmentService {
     @Autowired
@@ -25,6 +28,7 @@ public class AttachmentServixeImpl implements AttachmentService {
     @Override
     public Attachment saveAttachment(MultipartFile multipartFile) throws Exception {
         System.out.println(" inside the saveAttachment cus");
+
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         System.out.println("manoj123");
         try {
@@ -34,7 +38,7 @@ public class AttachmentServixeImpl implements AttachmentService {
                 throw new Exception("file name contain invalid path sequence" + fileName);
             }
             System.out.println("manoj");
-            Attachment attachment = new Attachment(fileName, multipartFile.getContentType(), multipartFile.getBytes());
+            Attachment attachment = new Attachment(fileName, multipartFile.getContentType(), multipartFile.getBytes(),null);
             return attachmentRepository.save(attachment);
         } catch (Exception exception) {
 
@@ -43,9 +47,23 @@ public class AttachmentServixeImpl implements AttachmentService {
 
     }
 
+
+
     @Override
     public Attachment getAttachment(String fileId) throws Exception {
         System.out.println(" inside the getAttachment cus");
         return attachmentRepository.findById(fileId).orElseThrow(() -> new Exception("file not found with id:" + fileId));
     }
+
+    @Override
+    public void updateById(String URL,String id) {
+        attachmentRepository.updateURLById(URL,id);
+    }
+
+    @Override
+    public Stream<Attachment> getAll() {
+        return attachmentRepository.findAll().stream();
+    }
+
+
 }

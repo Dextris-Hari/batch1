@@ -20,6 +20,7 @@ public class ForgotPasswordController {
 
     @PostMapping("/forgot")
     User forgetPassward( @RequestBody User user) {
+        System.out.println(user.getEmail());
         System.out.println("💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖💖");
         userService.updateOtpDateAndTimeByMail(user.getOtp(), user.getEmail(),
                 user.getTime(), user.getDate(), user);
