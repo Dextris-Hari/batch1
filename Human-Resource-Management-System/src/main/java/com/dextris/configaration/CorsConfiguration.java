@@ -1,5 +1,7 @@
 package com.dextris.configaration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -11,6 +13,7 @@ public class CorsConfiguration {
     private static final String PUT = "PUT";
     private static final String POST = "POST";
     private static final String DELETE = "DELETE";
+    private static final Logger LOGGER= LoggerFactory.getLogger(CorsConfiguration.class);
 
     public CorsConfiguration() {
         System.out.println(" configaration class corsConfigaration+"+this.getClass().getSimpleName());
@@ -18,13 +21,13 @@ public class CorsConfiguration {
 
     @Bean
     public WebMvcConfigurer corsConfigurations() {
-        System.out.println(" inside corsConfigurations method cus ");
+        LOGGER.info(" inside corsConfigurations method cus ");
 
         return new WebMvcConfigurer() {
 
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                System.out.println(" inside addCorsMappings method");
+                LOGGER.info(" inside addCorsMappings method");
 
                 registry.addMapping("/**").allowedMethods(GET, PUT, DELETE, POST).allowedHeaders("*").
                         allowedOriginPatterns("*").allowCredentials(true);

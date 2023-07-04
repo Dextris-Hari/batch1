@@ -5,6 +5,8 @@ import com.dextris.util.JWTUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,14 +28,16 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     private JWTUtil jwtUtil;
     @Autowired
     private JwtService jwtService;
+    private static final Logger LOGGER= LoggerFactory.getLogger(JwtRequestFilter.class);
+
 
     public JwtRequestFilter() {
-        System.out.println(this.getClass().getSimpleName());
+       LOGGER.info(this.getClass().getSimpleName());
 
     }
 
     public JwtRequestFilter(JWTUtil jwtUtil, JwtService jwtService) {
-        System.out.println(this.getClass().getSimpleName()+ "inside JwtRequestFilter para");
+        LOGGER.info(this.getClass().getSimpleName()+ "inside JwtRequestFilter para");
         this.jwtUtil = jwtUtil;
         this.jwtService = jwtService;
     }
@@ -41,32 +45,32 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        System.out.println(" inside doFilterInternal  ");
+       LOGGER.info(" inside doFilterInternal  ");
         final String HEADER = request.getHeader("Authorization");
         System.out.println(HEADER);
         String jwtToken = null;
         String userName = null;
         if (HEADER != null && HEADER.startsWith("Bearer ")) {
-            System.out.println(" no entry 1");
+
 
             jwtToken = HEADER.substring(7);
             try {
                 userName = jwtUtil.getUserNameFromToken(jwtToken);
 
             } catch (IllegalArgumentException illegalArgumentException) {
-                System.out.println("enable to get JWT Token");
+                LOGGER.info("enable to get JWT Token");
             } catch (ExpiredJwtException expiredJwtException) {
 
 
-                System.out.println("token is expired");
+                LOGGER.info("token is expired");
             }
 
         } else {
 
-            System.out.println(" jwt token doesnot start with Bearer");
+           LOGGER.info(" jwt token doesnot start with Bearer");
         }
         if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            System.out.println(" no entry 2");
+
             UserDetails userDetails = jwtService.loadUserByUsername(userName);
             if (jwtUtil.validateToken(jwtToken, userDetails)) {
 
@@ -76,7 +80,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             }
 
         }
-        System.out.println(" yes i find it");
+
         filterChain.doFilter(request, response);
 
 
