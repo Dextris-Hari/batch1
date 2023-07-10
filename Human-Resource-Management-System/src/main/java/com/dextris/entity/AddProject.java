@@ -6,15 +6,20 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Date;
+import java.util.List;
+
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Salary {
+@Entity
+public class AddProject {
     @Id
     private String employeeName;
-    private Double amount;
-    private Date date;
-    private String month;
+    private String projectName;
+    private String clientName;
+    private String developingFlatform;
+    private String dataBaseTechnology;
+    private String projectDescribtion;
+
+
 }
