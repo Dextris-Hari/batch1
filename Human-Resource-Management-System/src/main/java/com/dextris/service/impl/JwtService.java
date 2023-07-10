@@ -75,7 +75,7 @@ public class JwtService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println("inside the loadUserByUserName method cus");
         User user = userRepository.findById(username).get();
-        System.out.println(user.getStatus()+"🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶");
+        System.out.println(user.getStatus()+"🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶🎶"+" "+user);
         if (user != null) {
             return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getNewPassword(), getAuthorities(user));
         } else {
