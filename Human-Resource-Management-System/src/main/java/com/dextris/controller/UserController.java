@@ -113,4 +113,13 @@ public class UserController {
 
 
     }
+
+
+    @GetMapping("/sendmail")
+    @PreAuthorize("hasRole('Admin')")
+    public String sendMail(@RequestBody User user) {
+
+        userService.sendCredential(user);
+        return "mail is sended";
+    }
 }

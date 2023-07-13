@@ -21,6 +21,7 @@ public class Role {
         System.out.println(" inside the para"+ this.getClass().getSimpleName());
         this.roleName = roleName;
         this.roleDescription = roleDescription;
+
     }
 
     public Role() {

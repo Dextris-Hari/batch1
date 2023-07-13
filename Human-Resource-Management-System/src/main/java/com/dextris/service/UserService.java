@@ -22,4 +22,9 @@ public interface UserService {
 
         return null;
     }
+
+    default   void sendCredential(User user) {
+
+    }
+
 }

@@ -6,6 +6,8 @@ import com.dextris.repository.RoleRepository;
 import com.dextris.repository.UserRepository;
 import com.dextris.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,8 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private JavaMailSender javaMailSender;
 
     @Autowired
     public UserServiceImpl( UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
@@ -120,5 +124,24 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+@Override
+    public void sendCredential(User user) {
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        simpleMailMessage.setFrom("manojhj.xworkz@gmail.com");
+        simpleMailMessage.setSubject("user creadential");
+        simpleMailMessage.setTo(user.getEmail());
+        simpleMailMessage.setText("this is your user name :"+user.getUserName()+"   this is your password: "+ user.getNewPassword());
+        System.out.println("manojis");
+try {
+    javaMailSender.send(simpleMailMessage);
+
+}
+catch (Exception exception){
+    exception.printStackTrace();
+
+    System.out.println("mail is sended ");
+}
+
     }
 }
