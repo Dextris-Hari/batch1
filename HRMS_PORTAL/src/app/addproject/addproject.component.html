@@ -1,0 +1,77 @@
+<head>
+    <title>Add Project Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 700px;
+            margin: 20px;
+            text-align: center;
+            background-image: url(../../assets/images/999.jpg);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            margin-left: -650px;
+        }
+        
+        input[type="text"], select, textarea {
+            width: 800px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            
+        }
+        
+        textarea {
+            height: 100px;
+        }
+        
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: -90px;
+         
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Project</h2>
+    <form action="submit_project.php" method="post">
+        <label for="projectName">Project Name:</label>
+        <input type="text" id="projectName" name="projectName" required>
+        
+        <label for="clientName">Client Name:</label>
+        <input type="text" id="clientName" name="clientName" required>
+        
+        <label for="projectType">Project Type:</label>
+        <select id="projectType" name="projectType" required>
+            <option value="">Select Type</option>
+            <option value="Web">hrms_portal</option>
+            <option value="Mobile">python_project</option>
+            <option value="Desktop">spring_security</option>
+        </select>
+        
+        <label for="projectManager">Project Manager:</label>
+        <input type="text" id="projectManager" name="projectManager" required>
+        
+        <label for="developingPlatform">Developing Platform:</label>
+        <input type="text" id="developingPlatform" name="developingPlatform" required>
+        
+        <label for="databaseTechnology">Database Technology:</label>
+        <input type="text" id="databaseTechnology" name="databaseTechnology" required>
+        
+        <label for="projectDescription">Project Description:</label>
+        <textarea id="projectDescription" name="projectDescription" required></textarea>
+        
+       
+    <div class="hello">
+        <!-- <button type="button" class="btn btn-success">Submit</button> -->
+        <input type="submit" value="Submit" >
+    </div>
+    </form>
+</body>

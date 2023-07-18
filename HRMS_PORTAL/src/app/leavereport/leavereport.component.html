@@ -1,0 +1,107 @@
+<head>
+    <title>Leave Report</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      
+      }
+      
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      th {
+        background-color: rgb(91, 91, 175);
+        color: white;
+      }
+      tr:nth-child(odd){
+
+background-color: lightblue;
+
+}
+
+tr:nth-child(odd):hover{
+
+background-color: dodgerblue;
+
+color: white;
+
+transform: scale(1.010);
+
+transition: transform 300ms ease-in;
+
+}
+
+tr:nth-child(even){
+
+background-color: #ededed;
+
+}
+
+tr:nth-child(even):hover{
+
+background-color: lightgray;
+
+transform: scale(1.010);
+
+transition: transform 300ms ease-in;
+
+
+}
+    </style>
+  </head>
+  <body>
+    <h1>Leave Report</h1>
+    <table>
+      <tr>
+        <th>Employee Name</th>
+        <th>Leave Type</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Reason</th>
+      </tr>
+      <tr>
+        <td>Manoj Kumar</td>
+        <td>Vacation</td>
+        <td>2023-07-01</td>
+        <td>2023-07-05</td>
+        <td>Family trip</td>
+      </tr>
+      <tr>
+        <td>Manoj Gowda</td>
+        <td>Sick Leave</td>
+        <td>2023-07-03</td>
+        <td>2023-07-04</td>
+        <td>Fever</td>
+      </tr>
+      <tr>
+        <td>Dileep Kumar</td>
+        <td>Sick Leave</td>
+        <td>2023-07-04</td>
+        <td>2023-07-05</td>
+        <td>Fever</td>
+      </tr>
+      <tr>
+        <td>Sachin</td>
+        <td>Vacation</td>
+        <td>2023-07-08</td>
+        <td>2023-07-10</td>
+        <td>Friends trip</td>
+      </tr>
+      <!-- Add more rows for additional leave reports -->
+    </table>
+  </body>
