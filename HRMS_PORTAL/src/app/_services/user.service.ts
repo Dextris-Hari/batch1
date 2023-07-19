@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  PATH_OF_API = "http://localhost:9900";
+  PATH_OF_API = "http://localhost:9999";
   requestHeader = new HttpHeaders(
     {"No-Auth":"True"}
   );
@@ -16,4 +16,10 @@ export class UserService {
     return this.httpclient.post(this.PATH_OF_API + "/Authenticate" , loginData,
      {headers:this.requestHeader}); 
   }
+  
+  public registerNewUser(signupData: any){
+    console.log("jgscgj");
+    return this.httpclient.post(this.PATH_OF_API + '/createNewUser',signupData,
+      {headers:this.requestHeader}); 
+    }
 }

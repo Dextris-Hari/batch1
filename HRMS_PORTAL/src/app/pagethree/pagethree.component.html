@@ -58,35 +58,35 @@
   <body>
     <div class="container">
     <h1 style="text-align: center;color: rgb(221, 145, 5);">Registration Form</h1>
-    <form id="registrationForm">
+    <form id="registrationForm" #signupForm="ngForm" (ngSubmit)="signup(signupForm)">
       <div class="form-group">
         <label for="email">Email ID:</label>
         <input type="email" id="email" name="email" required>
       </div>
   
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="altEmail">Alternate Email ID:</label>
         <input type="email" id="altEmail" name="altEmail">
       </div>
-  
+   -->
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="userName" name="userName" required>
       </div>
   
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="newPassword" name="newPassword" required>
       </div>
   
       <div class="form-group">
         <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
       </div>
   
       <div class="form-group">
         <label for="doj">Date of Joining:</label>
-        <input type="date" id="doj" name="doj" required>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
       </div>
   
       <input type="submit" value="Submit">

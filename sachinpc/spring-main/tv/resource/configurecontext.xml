@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean class="com.xworkz.tv.TV"> <constructor-arg name="brand" value="Sony" 
+		index="0"> </constructor-arg> <constructor-arg name="color" value="Balck" 
+		index="1"></constructor-arg> <constructor-arg name="price" value="20000.00D" 
+		index="2"></constructor-arg> <constructor-arg name="dispaly" ref="d" index="3"></constructor-arg> 
+		<constructor-arg name="remote" ref="r" index="4"></constructor-arg> <constructor-arg 
+		name="setupBox" ref="a" index="5"></constructor-arg> <constructor-arg name="stand" 
+		ref="st" index="6"></constructor-arg> </bean> <bean class="com.xworkz.tv.Dispaly" 
+		id="d"> <constructor-arg name="price" value="1200.00D"></constructor-arg> 
+		<constructor-arg name="name" value="SonyDispaly"></constructor-arg> </bean> 
+		<bean class="com.xworkz.tv.Remote" id="r"> <constructor-arg name="name" value="SonyRemote"></constructor-arg> 
+		<constructor-arg name="price" value="500.00D"></constructor-arg> </bean> 
+		<bean class="com.xworkz.tv.SetupBox" id="a"> <constructor-arg name="name" 
+		value="SonySetupBox"></constructor-arg> <constructor-arg name="price" value="2000.00D"></constructor-arg> 
+		</bean> <bean class="com.xworkz.tv.Stand" id="st"> <constructor-arg name="name" 
+		value="SonyStand"></constructor-arg> <constructor-arg name="price" value="1000.00D"></constructor-arg> 
+		</bean> -->
+
+	<bean class="com.xworkz.tv.TV">
+		<property name="brand" value="Sony">
+		</property>
+		<property name="color" value="Balck"></property>
+		<property name="price" value="20000.00D"></property>
+
+		<property name="dispaly" ref="d"></property>
+		<property name="remote" ref="r"></property>
+		<property name="setupBox" ref="a"></property>
+		<property name="stand" ref="st"></property>
+	</bean>
+
+	<bean class="com.xworkz.tv.Dispaly" id="d">
+		<property name="price" value="1200.00D"></property>
+		<property name="name" value="SonyDispaly"></property>
+	</bean>
+
+	<bean class="com.xworkz.tv.Remote" id="r">
+		<property name="name" value="SonyRemote"></property>
+		<property name="price" value="500.00D"></property>
+	</bean>
+
+	<bean class="com.xworkz.tv.SetupBox" id="a">
+		<property name="name" value="SonySetupBox"></property>
+		<property name="price" value="2000.00D"></property>
+	</bean>
+	<bean class="com.xworkz.tv.Stand" id="st">
+		<property name="name" value="SonyStand"></property>
+		<property name="price" value="1000.00D"></property>
+	</bean>
+
+</beans>   
