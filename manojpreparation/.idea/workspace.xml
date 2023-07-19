@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8394d7f-50fa-4179-902f-d747b8627ee0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="a8394d7f-50fa-4179-902f-d747b8627ee0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
