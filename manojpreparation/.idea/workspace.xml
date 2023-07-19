@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8394d7f-50fa-4179-902f-d747b8627ee0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manojpreparation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/interview/java8/Stream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/java/com/dextris/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Human-Resource-Management-System/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,13 +41,18 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Stream2">
-    <configuration name="Employee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.java8.Employee" />
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.interview.java8" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.PrintConsecutiveCharactorInString7">
+    <configuration name="DivisionWithoutOperation7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.Math.DivisionWithoutOperation7" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.interview.java8.*" />
+          <option name="PATTERN" value="com.interview.Math.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -61,8 +60,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrintConsecutiveCharactorInString6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.String.PrintConsecutiveCharactorInString6" />
+    <configuration name="PrintConsecutiveCharactorInString7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.String.PrintConsecutiveCharactorInString7" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
@@ -74,8 +73,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrintSequentialCharactorInString6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.String.PrintSequentialCharactorInString6" />
+    <configuration name="PrintSequentialCharactorInString7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.String.PrintSequentialCharactorInString7" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
@@ -87,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Stream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.java8.Stream" />
+    <configuration name="StringAccurrence2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.String.StringAccurrence2" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.interview.java8.*" />
+          <option name="PATTERN" value="com.interview.String.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,12 +99,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Stream2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.java8.Stream2" />
+    <configuration name="StringReverseUsingJava82" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.String.StringReverseUsingJava82" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.interview.java8.*" />
+          <option name="PATTERN" value="com.interview.String.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,11 +114,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Stream2" />
-        <item itemvalue="Application.Employee" />
-        <item itemvalue="Application.Stream" />
-        <item itemvalue="Application.PrintSequentialCharactorInString6" />
-        <item itemvalue="Application.PrintConsecutiveCharactorInString6" />
+        <item itemvalue="Application.PrintConsecutiveCharactorInString7" />
+        <item itemvalue="Application.PrintSequentialCharactorInString7" />
+        <item itemvalue="Application.StringReverseUsingJava82" />
+        <item itemvalue="Application.StringAccurrence2" />
+        <item itemvalue="Application.DivisionWithoutOperation7" />
       </list>
     </recent_temporary>
   </component>

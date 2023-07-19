@@ -12,6 +12,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 @Service
@@ -160,6 +164,88 @@ catch (Exception exception){
         return userRepository.save(user);
 
 
+    }
+
+    @Override
+    public void updateOtpDateAndTimeByMail(Integer otp, String mail, LocalTime time, LocalDate date, User user) {
+        System.out.println(" running in updateOtpDateAndTimeByMail method in service");
+        System.out.println(mail);
+        User byMail = userRepository.findByEmail(mail);
+        System.out.println(" findByEmail" + byMail);
+
+        if (byMail != null) {
+            System.out.println(" findByEmail" + byMail + "not null");
+
+            System.out.println(" mail is matched");
+            double randomPin = (Math.random() * 9000) + 1000;
+            int randomPin1 = (int) randomPin;
+            Integer valueOf = Integer.valueOf(randomPin1);
+            System.out.println(" findByEmail" + valueOf);
+
+            LocalDate localDate1 = LocalDateTime.now().toLocalDate();
+            LocalTime localTime = LocalDateTime.now().toLocalTime();
+
+
+            user.setOtp(valueOf);
+            user.setDate(localDate1);
+            user.setTime(localTime);
+            userRepository.updateOtpAndDateAndTimeByEmail(valueOf, user.getEmail(),
+                    localTime, localDate1);
+            sendEmail(mail, valueOf);
+            System.out.println("manoj is ending");
+
+        }
+
+    }
+    public void sendEmail(String otpMail, Integer otp) {
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        simpleMailMessage.setFrom("manojhj.xworkz@gmail.com");
+        simpleMailMessage.setSubject("otp for reset password");
+        simpleMailMessage.setTo(otpMail);
+        simpleMailMessage.setText("  hai " + " otp is " + otp + " thank you");
+        javaMailSender.send(simpleMailMessage);
+        System.out.println("mail is sended ");
+
+    }
+    @Override
+    public Boolean resetPassword
+            (String email, String newPassword, Integer otp, User user, String conformPassword) {
+        System.out.println(" running on resetPassward ");
+        User findByMail = userRepository.findByEmail(email);
+
+
+        if (findByMail != null) {
+            Integer otp2 = findByMail.getOtp();
+            // otp2 = otp; // problem
+            System.out.println(otp2 + "🐗🐗🐗🐗🐗🐗🐗🐗🐗🐗🐗");
+            System.out.println(otp + "🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞🐞");
+            LocalTime time = findByMail.getTime();
+            LocalTime now = LocalTime.now();
+            System.out.println(now);
+            Duration between = Duration.between(time, now);
+            long minutes = between.toMinutes();
+            if (minutes <= 3) {
+                if (otp2.equals(otp)) {
+                    user.setNewPassword(getEncodedPassword(newPassword));
+                    user.setStatus("unblocked");
+                    System.out.println(user.getStatus() + "🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️");
+                    // problemmmmm
+                    userRepository.resetPasswordByEmail(email, user.getNewPassword(), user.getStatus(),
+                            user.getOtp(), user.getConfirmPassword());
+                    return true;
+                } else {
+                    System.out.println(" otp is not match");
+                    return false;
+                }
+
+            } else {
+                System.out.println(" email is not match");
+                return false;
+            }
+
+        }
+
+        return false;
     }
 
 }
