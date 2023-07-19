@@ -43,7 +43,7 @@ public class JWTController {
                 return null;
 
             } else {
-                System.out.println(" your registration is complited");
+                System.out.println(" your registration is completed");
                 return jwtResponse;
 
             }

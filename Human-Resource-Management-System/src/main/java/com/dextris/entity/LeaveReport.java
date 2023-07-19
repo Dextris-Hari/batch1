@@ -6,19 +6,16 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class AddProject {
+public class LeaveReport {
     @Id
     private String employeeName;
-    private String projectName;
-    private String clientName;
-    private String developingPlatform;
-    private String dataBaseTechnology;
-    private String projectDescription;
-
-
+    private Date fromDate;
+    private Date toDate;
+    private String reasonForLeave;
 }

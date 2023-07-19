@@ -15,14 +15,14 @@ public class AddProjectController {
     @Autowired
     private AddProjectService addProjectService;
 
-    @PostMapping("/addproject")
+    @PostMapping("/addproject")// tested and working fine
 
     @PreAuthorize("hasRole('Admin')")
     public AddProject addProject(@RequestBody AddProject addProject){
         return addProjectService.validateAndProject(addProject);
     }
 
-    @GetMapping("/allproject")
+    @GetMapping("/allproject")// tested and working fine
     @PreAuthorize("hasRole('Admin')")
 
     public List<AddProject> getAllProjects( ) {
@@ -31,7 +31,7 @@ public class AddProjectController {
         return addProjectService.validateAndGetAllProject();
     }
 
-    @GetMapping("/getbyname/{name}")
+    @GetMapping("/getbyname/{name}")//tested and found ok
     @PreAuthorize(("hasRole('User')"))
     public AddProject getByName(@PathVariable String name){
 

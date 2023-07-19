@@ -140,8 +140,27 @@ try {
 catch (Exception exception){
     exception.printStackTrace();
 
-    System.out.println("mail is sended ");
+    System.out.println("mail has been sent ");
 }
 
     }
+    public User updateUserDetails(String username, User updatedUserDetails) {
+        User user = userRepository.findByUserName(username);
+        if (user == null) {
+            throw new IllegalArgumentException("User not found with username: " + username);
+        }
+
+
+        user.setEmail(updatedUserDetails.getEmail());
+        user.setDateOfBirth(updatedUserDetails.getDateOfBirth());
+        user.setGender(updatedUserDetails.getGender());
+        user.setPhoneNumber(updatedUserDetails.getPhoneNumber());
+
+
+        return userRepository.save(user);
+
+
+    }
+
 }
+

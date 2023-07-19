@@ -17,7 +17,7 @@ public class SalaryController {
     private SalaryService service;
 
 
-    @GetMapping("/getbyname/{name}")
+    @GetMapping("/getbyname/{name}")//tested and found ok
     @PreAuthorize(("hasRole('User')"))
     public Salary getByName(@PathVariable String name){
 
@@ -26,7 +26,7 @@ public class SalaryController {
         return service.validateAndGetByName(name).orElse(null);
     }
 
-    @PostMapping("/addSalary")
+    @PostMapping("/addSalary")// tested and working fine
     @PreAuthorize("hasRole('Admin')")
 
     public Salary addSalary(@RequestBody Salary salary) {
@@ -34,7 +34,7 @@ public class SalaryController {
 
         return service.validateAndSaveSallary(salary);
     }
-    @GetMapping("/allSalary")
+    @GetMapping("/allSalary")// tested and working ok
     @PreAuthorize("hasRole('Admin')")
 
     public List<Salary> getAllSalaryDetails( ) {

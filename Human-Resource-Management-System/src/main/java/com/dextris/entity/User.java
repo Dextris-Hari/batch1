@@ -48,7 +48,7 @@ public class User {
 
 
     private String status;
-    private String conformPassword;
+    private String confirmPassword;
     private Integer count;
     private Integer otp;
     private LocalDate date;

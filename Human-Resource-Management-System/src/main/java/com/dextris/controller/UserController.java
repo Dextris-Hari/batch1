@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @RestController
 
@@ -115,11 +114,20 @@ public class UserController {
     }
 
 
-    @GetMapping("/sendmail")
+    @GetMapping("/sendmail")//tested and found ok
     @PreAuthorize("hasRole('Admin')")
     public String sendMail(@RequestBody User user) {
 
         userService.sendCredential(user);
-        return "mail is sended";
+        return "mail has been sent";
     }
+@PutMapping("/update")//tested and found ok
+@PreAuthorize("hasRole('User')")
+    public User updateUserDetails(  @RequestBody User updatedUserDetails){
+    User updatedUser = userService.updateUserDetails(updatedUserDetails.getUserName(), updatedUserDetails);
+    return updatedUser;
 }
+
+
+    }
+

@@ -15,7 +15,7 @@ public class ProjectReportController {
     @Autowired
     private ProjectReportService projectReportService;
 
-    @PostMapping("/addprojectreport")
+    @PostMapping("/addprojectreport")//tested and found ok
     @PreAuthorize("hasRole('User')")
 
     public ProjectReport addProjectReport(@RequestBody ProjectReport projectReport) {
@@ -24,7 +24,7 @@ public class ProjectReportController {
         return projectReportService.validateAndAdd(projectReport);
     }
 
-    @GetMapping("/allprojectreport")
+    @GetMapping("/allprojectreport")// tested and found ok
     @PreAuthorize("hasRole('Admin')")
 
     public List<ProjectReport> getAllProjectReport() {
