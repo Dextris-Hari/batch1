@@ -6,6 +6,7 @@ public class FindTheMissingNumberInArray1 {
     public static void main(String[] args) {
         int[] array = {1, 4, 2, 5, 6, 3, 8};
         System.out.println(missingNumber(array));
+        System.out.println(array.length * (array.length + 1) / 2);
 
 
     }
@@ -17,7 +18,7 @@ public class FindTheMissingNumberInArray1 {
         for (int num : array) {
             sum -= num;
         }
-return sum;
+        return sum;
 
     }
 }

@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8394d7f-50fa-4179-902f-d747b8627ee0" name="Changes" comment="" />
+    <list default="true" id="a8394d7f-50fa-4179-902f-d747b8627ee0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Reactive/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Reactive/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reactive/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Reactive/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reactive/src/main/java/com/reacive/reactive/ReactiveApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Reactive/src/main/java/com/reacive/reactive/ReactiveApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reactive/src/test/java/com/reacive/reactive/ReactiveApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Reactive/src/test/java/com/reacive/reactive/ReactiveApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sachinpc/config-server/src/main/java/com/manoj/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sachinpc/config-server/src/main/java/com/manoj/configserver/ConfigServerApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,13 +47,13 @@
       <recent name="com.interview.java8" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PrintConsecutiveCharactorInString7">
-    <configuration name="DivisionWithoutOperation7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.Math.DivisionWithoutOperation7" />
+  <component name="RunManager" selected="Application.StringReverseUsingJava3">
+    <configuration name="BinaryTreeMaxValue8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.binarytree.BinaryTreeMaxValue8" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.interview.Math.*" />
+          <option name="PATTERN" value="com.interview.binarytree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -55,8 +61,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrintConsecutiveCharactorInString7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.String.PrintConsecutiveCharactorInString7" />
+    <configuration name="Stream4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.java8.Stream4" />
+      <module name="manojpreparation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.interview.java8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringAccurrence4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.String.StringAccurrence4" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
@@ -68,8 +87,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PrintSequentialCharactorInString7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.String.PrintSequentialCharactorInString7" />
+    <configuration name="StringReverseUsingJava3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.String.StringReverseUsingJava3" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
@@ -81,25 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringAccurrence2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.String.StringAccurrence2" />
+    <configuration name="Test3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.java8.Test3" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.interview.String.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringReverseUsingJava82" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.String.StringReverseUsingJava82" />
-      <module name="manojpreparation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.interview.String.*" />
+          <option name="PATTERN" value="com.interview.java8.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,11 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PrintConsecutiveCharactorInString7" />
-        <item itemvalue="Application.PrintSequentialCharactorInString7" />
-        <item itemvalue="Application.StringReverseUsingJava82" />
-        <item itemvalue="Application.StringAccurrence2" />
-        <item itemvalue="Application.DivisionWithoutOperation7" />
+        <item itemvalue="Application.StringReverseUsingJava3" />
+        <item itemvalue="Application.StringAccurrence4" />
+        <item itemvalue="Application.Test3" />
+        <item itemvalue="Application.Stream4" />
+        <item itemvalue="Application.BinaryTreeMaxValue8" />
       </list>
     </recent_temporary>
   </component>

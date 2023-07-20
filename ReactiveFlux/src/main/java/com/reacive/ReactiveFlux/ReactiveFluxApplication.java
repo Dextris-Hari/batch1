@@ -1,13 +1,14 @@
-package com.reacive.Reactive;
+package com.reacive.ReactiveFlux;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ReactiveApplication {
+public class ReactiveFluxApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ReactiveApplication.class, args);
+
+		SpringApplication.run(ReactiveFluxApplication.class, args);
 	}
 
 }
