@@ -23,7 +23,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfigaration  extends WebSecurityConfigurerAdapter {
     @Autowired
-    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+    private
+    JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
     @Autowired
@@ -56,10 +57,16 @@ public class WebSecurityConfigaration  extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         System.out.println(" inside the configure method");
         http.cors();
-        http.csrf().disable().authorizeRequests().antMatchers
-                        ("/Authenticate","/createNewUser","/upload","/files/{fileId}","/forgot","/reset","/send","/get/{yearOfPassLessThan}","/branch/{branch}","/degree/{degree}","/job/add","/files")
+        http
+                .csrf().disable()
+                .authorizeRequests().antMatchers
+                        ("/Authenticate"
+                                ,"/createNewUser","/upload","/files/{fileId}","/forgot",
+                                "/reset","/send","/get/{yearOfPassLessThan}",
+                                "/branch/{branch}","/degree/{degree}","/job/add","/files")
                 .permitAll().antMatchers(HttpHeaders.ALLOW).permitAll()
-                .anyRequest().authenticated().and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                .anyRequest().authenticated().and().exceptionHandling()
+                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
@@ -80,4 +87,5 @@ public class WebSecurityConfigaration  extends WebSecurityConfigurerAdapter {
         authenticationManagerBuilder.userDetailsService(jwtService).passwordEncoder(passwordEncoder());
 
     }
+
 }

@@ -1,9 +1,8 @@
-package com.dextris.dextris.configuration;
+package com.manoj.configuration;
 
-import com.dextris.dextris.service.impl.JwtService;
-import com.dextris.dextris.util.JwtUtil;
+import com.manoj.servce.MyUserServiceDetails;
+import com.manoj.util.JWTUtil;
 import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Header;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,35 +18,23 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
-public class JwtRequestFilter extends OncePerRequestFilter {
+public class Filter extends OncePerRequestFilter {
     @Autowired
-    private JwtUtil jwtUtil;
+    private MyUserServiceDetails myUserServiceDetails;
     @Autowired
-    private JwtService jwtService;
-
-    public JwtRequestFilter() {
-        System.out.println(this.getClass().getSimpleName());
-
-    }
-
-    public JwtRequestFilter(JwtUtil jwtUtil, JwtService jwtService) {
-        System.out.println(this.getClass().getSimpleName()+ "inside JwtRequestFilter para");
-        this.jwtUtil = jwtUtil;
-        this.jwtService = jwtService;
-    }
+    private JWTUtil jwtUtil;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
-        System.out.println(" inside doFilterInternal  ");
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         final String HEADER = request.getHeader("Authorization");
-        System.out.println(HEADER);
+      String s=  request.getRemoteHost();
+        System.out.println(s+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         String jwtToken = null;
         String userName = null;
-        if (HEADER != null && HEADER.startsWith("Bearer ")) {
-            System.out.println(" no entry 1");
 
-            jwtToken = HEADER.substring(7);
+        if (HEADER != null && HEADER.startsWith("earer ")) {
+
+            jwtToken = HEADER.substring(6);
             try {
                 userName = jwtUtil.getUserNameFromToken(jwtToken);
 
@@ -58,14 +45,13 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
                 System.out.println("token is expired");
             }
-
-        } else {
+        }else {
 
             System.out.println(" jwt token doesnot start with Bearer");
         }
         if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             System.out.println(" no entry 2");
-            UserDetails userDetails = jwtService.loadUserByUsername(userName);
+            UserDetails userDetails = myUserServiceDetails.loadUserByUsername(userName);
             if (jwtUtil.validateToken(jwtToken, userDetails)) {
 
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
@@ -75,11 +61,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                         setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             }
-
         }
-        System.out.println(" yes i find it");
         filterChain.doFilter(request, response);
-
 
     }
 }

@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8394d7f-50fa-4179-902f-d747b8627ee0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Reactive/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Reactive/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reactive/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Reactive/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reactive/src/main/java/com/reacive/reactive/ReactiveApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Reactive/src/main/java/com/reacive/reactive/ReactiveApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Reactive/src/test/java/com/reacive/reactive/ReactiveApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Reactive/src/test/java/com/reacive/reactive/ReactiveApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sachinpc/config-server/src/main/java/com/manoj/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sachinpc/config-server/src/main/java/com/manoj/configserver/ConfigServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dextris/src/main/java/com/dextris/dextris/configuration/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dextris/src/main/java/com/dextris/dextris/configuration/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dextris/src/main/java/com/dextris/dextris/configuration/WebSecurityConfigaration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dextris/src/main/java/com/dextris/dextris/configuration/WebSecurityConfigaration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +32,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Hp/Desktop/batch1/manojpreparation"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.interview.java8" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StringReverseUsingJava3">
-    <configuration name="BinaryTreeMaxValue8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.binarytree.BinaryTreeMaxValue8" />
+  <component name="RunManager" selected="Application.CodeExecuton">
+    <configuration name="CodeExecuton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.CodeExecuton" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.interview.binarytree.*" />
+          <option name="PATTERN" value="com.interview.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -61,12 +59,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Stream4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.interview.java8.Stream4" />
+    <configuration name="ReflectionDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.interview.reflection.ReflectionDemo" />
       <module name="manojpreparation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.interview.java8.*" />
+          <option name="PATTERN" value="com.interview.reflection.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CodeExecuton" />
+        <item itemvalue="Application.ReflectionDemo" />
         <item itemvalue="Application.StringReverseUsingJava3" />
         <item itemvalue="Application.StringAccurrence4" />
         <item itemvalue="Application.Test3" />
-        <item itemvalue="Application.Stream4" />
-        <item itemvalue="Application.BinaryTreeMaxValue8" />
       </list>
     </recent_temporary>
   </component>
